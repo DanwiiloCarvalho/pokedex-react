@@ -1,13 +1,14 @@
 import "./Card.css";
-export function Card() {
+export function Card({id, name, srcImage, types}) {
     return (
-        <li id="" className="card grass">
+        <li id="" className={"card " + types[0].type.name}>
             <div className="circle">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Pokemon image"/>
+                <img src={srcImage} alt="Pokemon image"/>
             </div>
             <div className="name-type">
-                <h2><span className="id">1</span>. <span>Bulbasaur</span></h2>
-                <p>grass | poison</p>
+                <h2><span className="id">{id}</span>. <span>{name}</span></h2>
+                {/* <p>grass | poison</p> */}
+                <p>{types.map(type => type.type.name).join(' | ')}</p>
             </div>
         </li>
     )

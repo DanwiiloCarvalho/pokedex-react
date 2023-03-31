@@ -1,22 +1,28 @@
 import './App.css';
 import { Card } from '../Card'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function App() {
+  const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
+  const [pokemonsState, setPokemonsState] = useState();
+  const [key, setKey] = useState(1);
 
-  function printCards() {
-    const cards = [];
-    for (let index = 0; index < 151; index++) {
-      cards.push(<Card key={index} />);
+  useEffect(() => {
+    async function getPokemons() {
+      const jsonResult = await fetch(apiUrl).then(response => response.json());
+      const pokemons = jsonResult.results;
+      const pokemonsDetails = pokemons.map(pokemon => fetch(pokemon.url).then(pokemon => pokemon.json()));
+      /* console.log(await Promise.all(pokemonsDetails)); */
+      setPokemonsState(await Promise.all(pokemonsDetails));
     }
-    return cards;
-  }
+    getPokemons().catch(error => console.log(error.message));
+  }, []);
 
   return (
     <main className='container'>
       <h1>Pokedex com React</h1>
       <ul className='pokemon-list'>
-        {printCards()}
+        {pokemonsState && pokemonsState.map(pokemon => <Card key={pokemon.name} id={pokemon.id} name={pokemon.name} srcImage={pokemon.sprites.front_default} types={pokemon.types}/>)}
       </ul>
     </main>
   )

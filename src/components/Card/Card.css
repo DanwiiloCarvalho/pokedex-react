@@ -34,6 +34,67 @@ div.name-type > h2 > span {
     text-transform: capitalize;
 }
 
+/*Cores para os tipos*/
+.fire {
+    background-color: rgba(255, 0, 0, 0.24);
+}
+
+.water {
+    background-color: rgba(28, 60, 150, 0.24);
+}
+
 .grass {
     background-color: rgba(43, 255, 0, 0.24);
+}
+
+.poison {
+    background-color: rgba(111, 0, 255, 0.24);
+}
+
+.normal {
+    background-color: rgba(255, 240, 240, 0.24);
+}
+
+.rock {
+    background-color: rgba(73, 72, 72, 0.24);
+}
+
+.psychic {
+    background-color: rgba(255, 0, 140, 0.524);
+}
+
+.ice {
+    background-color: rgba(219, 213, 213, 0.24);
+}
+
+.ground {
+    background-color: rgba(255, 102, 0, 0.24);
+}
+
+.electric {
+    background-color: rgba(235, 206, 47, 0.24);
+}
+
+.dragon {
+    background-color: rgba(0, 255, 213, 0.24);
+}
+
+.fighting {
+    background-color: rgba(255, 72, 0, 0.24);
+}
+
+.ghost {
+    background-color: rgba(117, 108, 108, 0.24);
+}
+
+.fairy {
+    background-color: rgba(243, 4, 76, 0.24);
+}
+
+.bug {
+    background-color: rgba(4, 119, 4, 0.24);
+}
+
+.dark {
+    background-color: rgba(24, 26, 24, 0.24);
 }
