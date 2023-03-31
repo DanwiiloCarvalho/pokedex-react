@@ -7,7 +7,6 @@ export function Card({id, name, srcImage, types}) {
             </div>
             <div className="name-type">
                 <h2><span className="id">{id}</span>. <span>{name}</span></h2>
-                {/* <p>grass | poison</p> */}
                 <p>{types.map(type => type.type.name).join(' | ')}</p>
             </div>
         </li>

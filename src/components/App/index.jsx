@@ -1,6 +1,7 @@
 import './App.css';
 import { Card } from '../Card'
 import { useEffect, useState } from 'react';
+import { Loading } from '../Loading';
 
 export function App() {
   const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
@@ -24,6 +25,7 @@ export function App() {
       <ul className='pokemon-list'>
         {pokemonsState && pokemonsState.map(pokemon => <Card key={pokemon.name} id={pokemon.id} name={pokemon.name} srcImage={pokemon.sprites.front_default} types={pokemon.types}/>)}
       </ul>
+      {!pokemonsState && <Loading />}
     </main>
   )
 }
