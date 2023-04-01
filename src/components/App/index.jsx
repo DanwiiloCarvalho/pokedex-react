@@ -2,11 +2,11 @@ import './App.css';
 import { Card } from '../Card'
 import { useEffect, useState } from 'react';
 import { Loading } from '../Loading';
+import { Modal } from '../Modal';
 
 export function App() {
   const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
   const [pokemonsState, setPokemonsState] = useState();
-  const [key, setKey] = useState(1);
 
   useEffect(() => {
     async function getPokemons() {
@@ -26,6 +26,7 @@ export function App() {
         {pokemonsState && pokemonsState.map(pokemon => <Card key={pokemon.name} id={pokemon.id} name={pokemon.name} srcImage={pokemon.sprites.front_default} types={pokemon.types}/>)}
       </ul>
       {!pokemonsState && <Loading />}
+      <Modal />
     </main>
   )
 }
