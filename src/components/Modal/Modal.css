@@ -12,9 +12,10 @@ section.modal {
 
 div.modal-container {
     background-color: white;
-    max-width: 80%;
+    /* max-width: 80%;
 
-    min-width: 80%;
+    min-width: 80%; */
+    width: 80%;
 
     min-height: 60%;
     border-radius: 12px;
@@ -54,4 +55,28 @@ div.modal-container span.number {
     font-weight: 600;
     font-size: 1.5rem;
     color: rgb(172, 169, 169);
+}
+
+@media screen and (min-width: 600px) {
+    div.modal-container {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    div.modal-container {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    div.modal-container {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    div.modal-container {
+        width: 30%;
+    }
 }
