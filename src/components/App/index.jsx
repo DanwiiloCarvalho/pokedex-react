@@ -23,6 +23,8 @@ export function App() {
   function handleModal() {
     if (!modalOpened) {
       setModalOpened(true);
+    } else {
+      setModalOpened(false);
     }
   }
 
@@ -33,7 +35,7 @@ export function App() {
         {pokemonsState && pokemonsState.map(pokemon => <Card key={pokemon.name} id={pokemon.id} name={pokemon.name} srcImage={pokemon.sprites.front_default} types={pokemon.types} handleModal={handleModal}/>)}
       </ul>
       {!pokemonsState && <Loading />}
-      {modalOpened && <Modal />}    
+      {modalOpened && <Modal handleModal={handleModal} />}    
     </main>
   )
 }

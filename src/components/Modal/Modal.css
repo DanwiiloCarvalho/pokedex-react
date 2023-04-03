@@ -1,4 +1,4 @@
-div.modal {
+section.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,13 +13,42 @@ div.modal {
 div.modal-container {
     background-color: white;
     width: 80%;
-    height: 80%;
+    /* height: 80%; */
+    min-height: 60%;
     border-radius: 12px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 1rem;
+    position: relative;
+}
+
+div.header > h2 {
+    font-size: 1.7rem;
+}
+
+span#close {
+    position: absolute;
+    right: 0.7rem;
+    top: 1.7rem;
+    cursor: pointer;
+}
+
+div.modal-container > img {
+    max-width: 100%;
+    margin: 1rem 0;
 }
 
 div.modal-container > p {
+    text-align: justify;
+}
 
+div.modal-container span.number {
+    display: block;
+    text-align: center;
+    padding-top: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: rgb(172, 169, 169);
 }
