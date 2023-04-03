@@ -1,15 +1,18 @@
+import { useState } from "react";
+import { Loading } from "../Loading";
 import "./Modal.css";
-export function Modal({handleModal}) {
+export function Modal({handleModal, id, name, description}) {
+
     return (
         <section className="modal">
             <div className="modal-container">
                 <div className="header">
-                    <h2>Bulbasaur</h2>
-                    <span className="number">Nº 1</span>
+                    <h2>{name}</h2>
+                    <span className="number">Nº {id}</span>
                 </div>
                 <span id="close" className="material-symbols-outlined" onClick={handleModal}>close</span>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/15.svg" alt="" />
-                <p>LA strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.</p>
+                <img src={id && "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + id + ".svg"}  alt={name}/>
+                <p>{description}</p>
             </div>
         </section>
     )

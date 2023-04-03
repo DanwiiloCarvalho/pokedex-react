@@ -12,8 +12,10 @@ section.modal {
 
 div.modal-container {
     background-color: white;
-    width: 80%;
-    /* height: 80%; */
+    max-width: 80%;
+
+    min-width: 80%;
+
     min-height: 60%;
     border-radius: 12px;
     display: flex;
@@ -26,6 +28,7 @@ div.modal-container {
 
 div.header > h2 {
     font-size: 1.7rem;
+    text-transform: capitalize;
 }
 
 span#close {

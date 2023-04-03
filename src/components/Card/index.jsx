@@ -2,7 +2,7 @@ import "./Card.css";
 export function Card({id, name, srcImage, types, handleModal}) {
 
     return (
-        <li id="" className={"card " + types[0].type.name} onClick={handleModal}>
+        <li id="" className={"card " + types[0].type.name} onClick={() => handleModal(id)}>
             <div className="circle">
                 <img src={srcImage} alt="Pokemon image"/>
             </div>
