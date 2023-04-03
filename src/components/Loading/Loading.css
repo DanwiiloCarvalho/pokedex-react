@@ -20,7 +20,8 @@
   }
 
   .message {
-    color: white;
+    /* color: white; */
+    color: rgb(186, 192, 197);
     font-weight: 600;
   }
   

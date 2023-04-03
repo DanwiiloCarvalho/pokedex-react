@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Loading } from "../Loading";
 import "./Modal.css";
 export function Modal({handleModal, id, name, description}) {
+    const [showLoading, setShowLoading] = useState(true);
 
     return (
         <section className="modal">
@@ -11,8 +12,11 @@ export function Modal({handleModal, id, name, description}) {
                     <span className="number">Nº {id}</span>
                 </div>
                 <span id="close" className="material-symbols-outlined" onClick={handleModal}>close</span>
-                <img src={id && "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + id + ".svg"}  alt={name}/>
-                <p>{description}</p>
+                {/* <img src={id && "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + id + ".svg"}  alt={name}/> */}
+
+                {showLoading && <Loading/>}
+                {<img src={id && "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + id + ".svg"}  alt={name} onLoad={() => setShowLoading(false)}/>}
+                <p>{description.replace("\f", " ")}</p>
             </div>
         </section>
     )
