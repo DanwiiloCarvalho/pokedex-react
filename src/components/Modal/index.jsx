@@ -16,7 +16,7 @@ export function Modal({handleModal, id, name, description}) {
 
                 {showLoading && <Loading/>}
                 {<img src={id && "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + id + ".svg"}  alt={name} onLoad={() => setShowLoading(false)}/>}
-                <p>{description.replace("\f", " ")}</p>
+                <p>{description && description.replace("\f", " ")}</p>
             </div>
         </section>
     )
